@@ -1,7 +1,7 @@
 #Download “release full” build. It will have the largest set of libraries with greater functionality. For example full build https://github.com/GyanD/codexffmpeg/releases/tag/2022-12-15-git-9adf02247c
 #Extract the contents in the ZIP file to a folder of your choice.
 #To add FFmpeg to Win10 path. (User variables -> Path -> New and add)
-#Verify. Open the Command Prompt or PowerShell window, type ffmpeg, and press Enter.
+#Verify. Open the Command Prompt or PowerShell window, type FFmpeg, and press Enter.
 
 import m3u8_To_MP4
 import os
@@ -45,7 +45,8 @@ if __name__ == '__main__':
     
     # set variables
     temp_segments = 'temp'
-    mp4_file_dir = 'Piip ja Tuut'
+    mp4_file_dir = 'Luise ja Oliver'
+    links_txt_file = 'Luise ja Oliver m3u8 links.txt'
 
     # create temp_segments and mp4_file_dir folders if not exists
     if not os.path.exists(temp_segments):
@@ -64,7 +65,7 @@ if __name__ == '__main__':
         exit(1)
     else:
         # read in m3u8 links from file
-        for url in open('Piip ja Tuut m3u8 links.txt', 'r'):
+        for url in open(links_txt_file, 'r'):
             download_stream_to_mp4(url=url, mp4_file_dir=mp4_file_dir, temp_segments=temp_segments)
     print('============================================================================================')
     print('All files downloaded')
